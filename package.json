@@ -1,0 +1,22 @@
+{
+  "name": "php-virtual-university",
+  "version": "1.0.0",
+  "description": "University website",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herokudev/php-virtual-university.git"
+  },
+  "author": "Herokudev aka Herbert Orellana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herokudev/php-virtual-university/issues"
+  },
+  "homepage": "https://github.com/herokudev/php-virtual-university#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
