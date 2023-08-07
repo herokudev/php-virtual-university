@@ -101,14 +101,3 @@
                 </div>                
             </nav>
             <hr />
-            <div class=" bg-gray-200 h-screen w-screen">
-                <h1 class=" p-3 text-2xl ml-2">Dashboard</h1>
-                <div class="p-3 bg-white ml-5 w-[800px]">
-                    <p>Bienvenido</p>
-                    <p>Selecciona la accion que deseas realizar en las pestañas del menu de la izquierda</p>
-                </div>
-            </div>
-        </div>
-    </main>      
-</body>
-</html>

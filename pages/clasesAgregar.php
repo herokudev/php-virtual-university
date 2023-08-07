@@ -1,0 +1,15 @@
+<?php
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/pages/menuAdmin.php");
+
+?>
+
+<div class=" bg-gray-200 h-screen w-screen">
+                <h1 class=" p-3 text-2xl ml-2">Agregar Clase</h1>
+                <div class="p-3 bg-white ml-5 w-[800px]">
+                    <p>Ingrese informacion de la nueva Clase</p>
+                </div>
+            </div>
+        </div>
+    </main>      
+</body>
+</html>

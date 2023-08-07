@@ -18,5 +18,8 @@
   "homepage": "https://github.com/herokudev/php-virtual-university#readme",
   "devDependencies": {
     "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "datatables.net-dt": "^1.13.6"
   }
 }

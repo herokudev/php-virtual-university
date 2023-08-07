@@ -14,10 +14,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="dashboard.css">
-    <script src="../scripts/main.js" defer></script>
     <link href="../output.css" rel="stylesheet">
+    <script src="../scripts/main.js" defer></script>    
     <title>University</title>
 </head>
 <body>
@@ -142,10 +142,45 @@
             </nav>
             <hr />
             <div class=" bg-gray-200 h-screen w-screen">
-                <h1 class=" p-3 text-2xl ml-2">Dashboard</h1>
-                <div class="p-3 bg-white ml-5 w-[800px]">
-                    <p>Bienvenido</p>
-                    <p>Selecciona la accion que deseas realizar en las pestañas del menu de la izquierda</p>
+                <h1 class=" p-3 text-2xl ml-2">Lista de Clases</h1>
+                <div class="p-3 bg-white ml-5 w-[80%]">
+                    <div class="flex items-center justify-between">
+                        <p>Informacion de Clases</p>
+                        <a href='clasesAgregar.php'><button class="bg-[#2995c6] text-white w-[150px] pt-2 pb-2">Agregar Clase</button></a>
+                    </div> 
+                    <table class="w-full border-collapse border border-slate-500 mt-5">
+                        <thead class="bg-gray-50 border-b-2 border-gray-200">
+                            <tr class=" text-left">
+                                <th>#</th>
+                                <th>Clase</th>
+                                <th>Maestro</th>
+                                <th>Alumnos inscritos</th>                                
+                                <th>Acciones</th>                                
+                            </tr>
+                        </thead>
+                        <tbody class="border-b-2 border-gray-100 bg-[#fff5d2]">
+                        <?php
+                                $conn = new mysqli("localhost", "root", "", "php-university");
+                                $sql = "select c.id_clase, c.nombreClase, c.id_usuario, c.nombreCompleto, (select count(a.id_usuario) from asig_namesR3 a WHERE id_clase = c.id_clase) as inscritos from asigna_maestros c order by c.id_clase";
+                                $result = $conn->query($sql); 
+                                $line = 1;               
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $id = $row['id_clase'];
+                                        echo "<tr>"
+                                        . "<td>" . $line . "</td>"
+                                        . "<td>" . $row['nombreClase'] . "</td>" 
+                                        . "<td>" . $row['nombreCompleto'] . "</td>" 
+                                        . "<td>" . $row['inscritos'] . "</td>" 
+                                        . "<td><div class='flex gap-2'><p><a href='clasesEditar.php?editarId=$id'><img class='h-5 w-auto pr-3' src='../assets/edit_square.svg' alt='edit-icon'></a></p><p><a href='clasesBorrar.php?borrarId=$id'><img class='h-5 w-auto ml-3 pr-3' src='../assets/delete_icon.svg' alt='delete-icon'></a></p></div></td>"                                        
+                                        . "</tr>";
+                                        $line++;
+                                    }
+                                }
+                                $conn->close();
+                            ?>            
+                        </tbody>
+                    </table>             
                 </div>
             </div>
         </div>

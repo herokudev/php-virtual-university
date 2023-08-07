@@ -4,7 +4,7 @@
     session_start();
     $userName = getUserName($_SESSION["email"]);
 
-    if (!isset($_SESSION["maestro"])) {
+    if (!isset($_SESSION["admin"])) {
         require("nonauthorized.php");
         die();
     }     
@@ -31,9 +31,9 @@
             </div>
             <div class="py-4 text-gray-400">
             <div>
-                <p class="ml-6 text-lg font-bold text-gray-200">Maestro</p>
+                <p class="ml-6 text-lg font-bold text-gray-200">Administrador</p>
                 <p class="ml-6"><?= $userName ?></p>
-            </div>                
+            </div>  
             
             <ul class="mt-6">
                 <li class="relative px-6 py-3">
@@ -59,7 +59,7 @@
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                     ></path>
                     </svg>
-                    <span class="ml-4">MENU MAESTRO</span>
+                    <span class="ml-4">MENU ADMINISTRACION</span>
                 </a>
                 </li>
             </ul>
@@ -67,10 +67,50 @@
                 <li class="relative px-6 py-3">
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-200"
-                    href="maestroAlumnos.php"
+                    href="permisosList.php"
                 >
-                <img class="w-[30px] h-[30px]" src="../assets/graduation-cap.png" alt="maestros-icon">
+                    <svg
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    >
+                    <path
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                    ></path>
+                    </svg>
+                    <span class="ml-6">Permisos</span>
+                </a>
+                </li>
+                <li class="relative px-6 py-3">
+                <a
+                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-200"
+                    href="maestrosList.php"
+                >
+                    <img class="w-[30px] h-[30px]" src="../assets/group.svg" alt="maestros-icon">
+                    <span class="ml-4">Maestros</span>
+                </a>
+                </li>
+                <li class="relative px-6 py-3">
+                <a
+                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-200"
+                    href="alumnosList.php"
+                >
+                    <img class="w-[30px] h-[30px]" src="../assets/school-bag.png" alt="alumnos-icon">
                     <span class="ml-4">Alumnos</span>
+                </a>
+                </li>
+                <li class="relative px-6 py-3">
+                <a
+                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-200"
+                    href="clasesList.php"
+                >
+                    <img class="w-[30px] h-[30px]" src="../assets/classroom.png" alt="clases-icon">
+                    <span class="ml-4">Clases</span>
                 </a>
                 </li>
             </ul>
@@ -101,14 +141,3 @@
                 </div>                
             </nav>
             <hr />
-            <div class=" bg-gray-200 h-screen w-screen">
-                <h1 class=" p-3 text-2xl ml-2">Dashboard</h1>
-                <div class="p-3 bg-white ml-5 w-[800px]">
-                    <p>Bienvenido</p>
-                    <p>Selecciona la accion que deseas realizar en las pestañas del menu de la izquierda</p>
-                </div>
-            </div>
-        </div>
-    </main>      
-</body>
-</html>
