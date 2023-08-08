@@ -4,7 +4,7 @@
     if (isset($_GET['editarId'])) {
         $id = $_GET['editarId'];
         $_SESSION["editId"] = $id;
-        $conn = new mysqli("localhost", "root", "", "php-university");
+        $conn = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
         $sql = "SELECT id_usuario, dni, nombre, apellido, email, direccion, fecha_nac FROM usuarios where id_usuario=$id";
         $result = $conn->query($sql); 
         if ($result->num_rows > 0) {

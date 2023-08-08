@@ -18,7 +18,7 @@
         //echo "<br />";
         //echo "vamos a editar usuar con id --> " . $_SESSION["editId"];
 
-        $mysqli = new mysqli("localhost", "root", "", "php-university");
+        $mysqli = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
         $query = "UPDATE usuarios set dni='$dni', email='$email', nombre='$firstName', apellido='$lastName', direccion='$address', fecha_nac='$birthDate' where id_usuario = " . $_SESSION["editId"];
         $resultado = $mysqli->query($query);
         mysqli_close($mysqli);

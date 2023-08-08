@@ -20,7 +20,7 @@
                     <tbody class="border-b-2 border-gray-100 bg-[#fff5d2]">
                     <?php
                             $userId = getUserId($_SESSION["email"]);
-                            $conn = new mysqli("localhost", "root", "", "php-university");
+                            $conn = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
                             $sql = "SELECT * FROM calificacionesList where id_usuario = $userId";
                             $result = $conn->query($sql); 
                             $line = 1;               

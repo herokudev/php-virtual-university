@@ -160,7 +160,7 @@
                         </thead>
                         <tbody class="border-b-2 border-gray-100 bg-[#fff5d2]">
                         <?php
-                                $conn = new mysqli("localhost", "root", "", "php-university");
+                                $conn = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
                                 $sql = "select c.id_clase, c.nombreClase, c.id_usuario, c.nombreCompleto, (select count(a.id_usuario) from asig_namesR3 a WHERE id_clase = c.id_clase) as inscritos from asigna_maestros c order by c.id_clase";
                                 $result = $conn->query($sql); 
                                 $line = 1;               

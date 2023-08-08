@@ -25,7 +25,10 @@
     </main>
     <?php
             session_start();
-            $_SESSION["usuario"] = "";            
+            $_SESSION["usuario"] = "";     
+            $_SESSION["dbName"] = "php-university";
+            $_SESSION["dbUser"] = "root";
+            $_SESSION["dbPwd"] = "";
         ?>        
 </body>
 </html>

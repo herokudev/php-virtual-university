@@ -23,7 +23,7 @@
                     <?php
                             $userId = getUserId($_SESSION["email"]);
                             $claseId = getIdClase($userId);
-                            $conn = new mysqli("localhost", "root", "", "php-university");
+                            $conn = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
                             $sql = "SELECT * FROM calificacionesList where id_clase = $claseId";
                             $result = $conn->query($sql); 
                             $line = 1;               

@@ -19,7 +19,6 @@
     <body>
         <div class="flex items-center justify-center text-blue-700 text-xl h-20">
               <?= $_SESSION["mensaje"]; ?>
-        </div>  
-        <script src="https://cdn.tailwindcss.com"></script>      
+        </div>            
     </body>
     </html>    

@@ -15,7 +15,7 @@
         echo "Vamos a desasignar clase con Id --> " . $id_clase;
         echo "<br />";
         echo "Vamos a desasignar clase con usuarioId --> " . $userId;
-        $conn = new mysqli("localhost", "root", "", "php-university");
+        $conn = new mysqli("localhost", $_SESSION["dbUser"], $_SESSION["dbPwd"], $_SESSION["dbName"]);
         $sql = "DELETE FROM asignaciones where id_usuario=" . $userId . " and id_clase=" . $id_clase;
         $result = $conn->query($sql);   
         $conn->close();

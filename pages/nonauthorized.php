@@ -10,6 +10,5 @@
     <div class="flex items-center justify-center text-red-700 text-xl h-20">
           <p>Acceso no Autorizado !!</p>
     </div>    
-    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>    
